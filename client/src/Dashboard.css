@@ -1,0 +1,165 @@
+.dashboard-container {
+  padding: 20px 40px;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-img {
+  width: 80px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.logo-text {
+  color: #1f4f7a;
+  font-size: 26px;
+  margin: 0;
+}
+
+/* Header right */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Search */
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f1f1f1;
+  padding: 8px 14px;
+  border-radius: 20px;
+}
+
+.search-icon {
+  font-size: 14px;
+  color: #555;
+}
+
+.audio-search-icon {
+  font-size: 16px;
+  color: #555;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.audio-search-icon:hover {
+  color: #1f4f7a;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 160px;
+  font-size: 13px;
+}
+
+/* Profile */
+.profile-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Nav */
+.nav {
+  margin: 20px auto;
+  padding: 10px 30px;
+  background: #f2f2f2;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: fit-content;
+}
+
+.nav-item {
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 15px;
+  transition: background 0.2s;
+}
+
+.nav-item:hover {
+  background: #e0e0e0;
+}
+
+/* ACTIVE MENU */
+.nav-item.active {
+  background: #d6d6d6;
+  font-weight: 600;
+}
+
+/* Title */
+.dashboard-title {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* Stats */
+.stats-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+}
+
+.stat-card {
+  background: #fff;
+  padding: 25px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.stat-icon {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.stat-card h3 {
+  font-size: 22px;
+  margin: 5px 0;
+}
+
+/* Colors */
+.green {
+  color: #2e7d32;
+  border: 1px solid #c8e6c9;
+}
+
+.blue {
+  color: #1565c0;
+  border: 1px solid #bbdefb;
+}
+
+.brown {
+  color: #6d4c41;
+  border: 1px solid #d7ccc8;
+}
+
+.red {
+  color: #c62828;
+  border: 1px solid #ffcdd2;
+}

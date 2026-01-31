@@ -1,0 +1,121 @@
+.books-container {
+  padding: 20px 40px;
+  font-family: Arial, sans-serif;
+}
+
+/* Header (same styles as Dashboard) */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.logo-text {
+  color: #1f4f7a;
+  font-size: 26px;
+  margin: 0;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Search */
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f1f1f1;
+  padding: 8px 14px;
+  border-radius: 20px;
+}
+
+.search-icon {
+  font-size: 14px;
+  color: #555;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 160px;
+  font-size: 13px;
+}
+
+/* Profile */
+.profile-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Nav */
+.nav {
+  margin: 20px auto;
+  padding: 10px 30px;
+  background: #f2f2f2;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: fit-content;
+}
+
+.nav span {
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 15px;
+}
+
+.nav .active {
+  background: #d6d6d6;
+  font-weight: 600;
+}
+
+/* Content */
+.books-content {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.books-content input {
+  display: block;
+  margin: 20px auto;
+  width: 360px;
+  padding: 14px;
+  background: #e0e0e0;
+  border: none;
+  text-align: center;
+  font-weight: 500;
+}
+
+.next-btn {
+  margin-top: 30px;
+  padding: 12px 18px;
+  border-radius: 50%;
+  border: 2px solid black;
+  background: white;
+  font-size: 20px;
+  cursor: pointer;
+}
