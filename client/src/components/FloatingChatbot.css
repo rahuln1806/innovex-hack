@@ -1,0 +1,90 @@
+/* Floating Icon */
+.bruno-icon {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 55px;
+    height: 55px;
+    background: #2c2c2c;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  }
+  
+  /* Chat Window */
+  .bruno-window {
+    position: fixed;
+    bottom: 90px;
+    right: 25px;
+    width: 320px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    z-index: 9999;
+    overflow: hidden;
+  }
+  
+  /* Header */
+  .bruno-header {
+    background: #1f1f1f;
+    color: white;
+    padding: 12px;
+    text-align: center;
+  }
+  
+  .bruno-header h3 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .bruno-header p {
+    margin: 0;
+    font-size: 12px;
+    opacity: 0.8;
+  }
+  
+  /* Body */
+  .bruno-body {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .bruno-body select,
+  .bruno-body input {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  .bruno-body button {
+    background: #2c2c2c;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .bruno-answer {
+    background: #f4f4f4;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+/* 🔥 FIX: Allow dropdown interaction */
+.bruno-window select {
+    pointer-events: auto !important;
+    z-index: 10000 !important;
+    position: relative;
+    background-color: #ffffff;
+    color: #000000;
+  }
+    

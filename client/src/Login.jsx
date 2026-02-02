@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./App.css";
 import logo from "./assets/logo.png";
 import { authAPI } from "./services/api";
 
 const Login = ({ setIsLoggedIn }) => {
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -26,10 +28,10 @@ const Login = ({ setIsLoggedIn }) => {
         password.trim()
       );
 
-      // ✅ Login success - store token and user info
+      // Login success - store token and user info
       if (response.token) {
         localStorage.setItem("token", response.token);
-        localStorage.setItem("username", response.username);
+        localStorage.setItem("username", response.username || username.trim());
         if (response.id) {
           localStorage.setItem("userId", response.id);
         }
@@ -37,6 +39,9 @@ const Login = ({ setIsLoggedIn }) => {
 
       // Update login state
       setIsLoggedIn(true);
+
+      // Ensure redirect happens immediately after successful login
+      navigate("/dashboard", { replace: true });
 
     } catch (error) {
       if (error.response) {
@@ -57,35 +62,56 @@ const Login = ({ setIsLoggedIn }) => {
   };
 
   return (
-    <div className="login-container">
-      <div className="login-box">
-        <div className="logo">
-          <img src={logo} alt="Librora Logo" className="logo-img" />
+    <div className="login-page">
+      <div className="login-background"></div>
+      <div className="login-container">
+        <div className="login-box">
+          <div className="logo-section">
+            <div className="logo-circle">
+              <img src={logo} alt="Librora Logo" className="logo-img" />
+            </div>
+            <h1 className="logo-title">LIBRORA</h1>
+            <p className="subtitle">Smart College Library Management</p>
+          </div>
+
+          <form onSubmit={handleSubmit} className="login-form">
+            <div className="form-group">
+              <label htmlFor="username">Username</label>
+              <input
+                id="username"
+                type="text"
+                placeholder="Enter your username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                className="input-field"
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="password">Password</label>
+              <input
+                id="password"
+                type="password"
+                placeholder="Enter your password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="input-field"
+              />
+            </div>
+
+            <button type="submit" className="login-btn" disabled={isLoading}>
+              {isLoading ? (
+                <>
+                  <span className="spinner"></span> LOGGING IN...
+                </>
+              ) : (
+                "LOGIN"
+              )}
+            </button>
+          </form>
+
+          <p className="demo-hint"></p>
         </div>
-
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="USERNAME"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            className="input-field"
-          />
-
-          <input
-            type="password"
-            placeholder="PASSWORD"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="input-field"
-          />
-
-          <button type="submit" className="login-btn" disabled={isLoading}>
-            {isLoading ? "LOGGING IN..." : "LOGIN"}
-          </button>
-        </form>
-
-        <p className="forgot-password"></p>
       </div>
     </div>
   );
